@@ -1,3 +1,13 @@
 .container {
   margin-top: 30px;
 }
+
+.nav {
+  clear: both;
+}
+a {
+  float: left;
+}
+.active a {
+  color: red;
+}

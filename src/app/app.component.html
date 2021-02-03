@@ -1,3 +1,4 @@
+<!--
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
@@ -14,3 +15,62 @@
     </div>
   </div>
 </div>
+-->
+<div>
+  <ul class="nav">
+    <li
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a routerLink="">Main</a>
+    </li>
+    <li routerLinkActive="active">
+      <a routerLink="/about">About</a>
+    </li>
+    <li routerLinkActive="active">
+      <a routerLink="/item/5/details">Info</a>
+    </li>
+    <li routerLinkActive="active">
+      <a routerLink="/item/5/stat">Stat</a>
+    </li>
+    
+    <!--    <li>
+      <a 
+      [routerLink]="['item', '5']"
+      [queryParams]="{ product: 'phone', price: 200 }"
+      >item 5</a>
+    </li>
+    <li>
+      <a 
+      [routerLink]="['item', '8']"
+      [queryParams]="{ product: 'tablet'}"
+      >item 8</a>
+    </li>-->
+  </ul>
+  <div class="form-group">
+    <h3>Product's Params</h3>
+    <input
+        type="number"
+        [(ngModel)]="item.id"
+        class="form-control"
+        placeholder="Model number"
+      /><br />
+      <input
+        type="number"
+        [(ngModel)]="item.price"
+        class="form-control"
+        placeholder="Price"
+      /><br />
+      <input
+        [(ngModel)]="item.product"
+        class="form-control"
+        placeholder="Product"
+      /><br />
+      <button (click)="goToItem(item)" class="btn">
+        Go to
+      </button>
+  </div>
+  <router-outlet></router-outlet>
+  <button (click)="goHome()">Home</button>
+</div>
+
